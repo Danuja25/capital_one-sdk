@@ -15,7 +15,7 @@ public class Feature {
     @JsonProperty("featureDetails")
     private FeatureDetails featureDetails;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      * No args constructor for use in serialization
@@ -84,7 +84,7 @@ public class Feature {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Feature) == false) {
+        if (!(other instanceof Feature)) {
             return false;
         }
         Feature rhs = ((Feature) other);

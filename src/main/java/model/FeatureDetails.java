@@ -78,7 +78,7 @@ public class FeatureDetails {
     @JsonProperty("allowOverrideOverdraftLimit")
     private boolean allowOverrideOverdraftLimit;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      * No args constructor for use in serialization
@@ -504,7 +504,7 @@ public class FeatureDetails {
         if (other == this) {
             return true;
         }
-        if ((other instanceof FeatureDetails) == false) {
+        if (!(other instanceof FeatureDetails)) {
             return false;
         }
         FeatureDetails rhs = ((FeatureDetails) other);

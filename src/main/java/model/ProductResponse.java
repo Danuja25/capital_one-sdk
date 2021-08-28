@@ -16,7 +16,7 @@ public class ProductResponse {
     @JsonProperty("products")
     private List<Product> products = null;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      * No args constructor for use in serialization
@@ -87,7 +87,7 @@ public class ProductResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof ProductResponse) == false) {
+        if (!(other instanceof ProductResponse)) {
             return false;
         }
         ProductResponse rhs = ((ProductResponse) other);

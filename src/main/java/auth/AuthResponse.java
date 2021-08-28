@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -26,7 +27,7 @@ public class AuthResponse implements Serializable
     @JsonProperty("refresh_token")
     private String refreshToken;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      * No args constructor for use in serialization
@@ -148,11 +149,11 @@ public class AuthResponse implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof AuthResponse) == false) {
+        if (!(other instanceof AuthResponse)) {
             return false;
         }
         AuthResponse rhs = ((AuthResponse) other);
-        return (((((this.expiresIn == rhs.expiresIn)&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.accessToken == rhs.accessToken)||((this.accessToken!= null)&&this.accessToken.equals(rhs.accessToken))))&&((this.tokenType == rhs.tokenType)||((this.tokenType!= null)&&this.tokenType.equals(rhs.tokenType))))&&((this.refreshToken == rhs.refreshToken)||((this.refreshToken!= null)&&this.refreshToken.equals(rhs.refreshToken))));
+        return this.expiresIn == rhs.expiresIn && Objects.equals(this.additionalProperties, rhs.additionalProperties) && Objects.equals(this.accessToken, rhs.accessToken) && Objects.equals(this.tokenType, rhs.tokenType) && (Objects.equals(this.refreshToken, rhs.refreshToken));
     }
 
 }

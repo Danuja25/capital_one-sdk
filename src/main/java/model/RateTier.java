@@ -24,7 +24,7 @@ public class RateTier {
     @JsonProperty("maximumBalance")
     private long maximumBalance;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      * No args constructor for use in serialization
@@ -144,7 +144,7 @@ public class RateTier {
         if (other == this) {
             return true;
         }
-        if ((other instanceof RateTier) == false) {
+        if (!(other instanceof RateTier)) {
             return false;
         }
         RateTier rhs = ((RateTier) other);

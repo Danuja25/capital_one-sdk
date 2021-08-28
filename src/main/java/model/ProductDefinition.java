@@ -24,7 +24,7 @@ public class ProductDefinition {
     @JsonProperty("productCode")
     private String productCode;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      * No args constructor for use in serialization
@@ -144,7 +144,7 @@ public class ProductDefinition {
         if (other == this) {
             return true;
         }
-        if ((other instanceof ProductDefinition) == false) {
+        if (!(other instanceof ProductDefinition)) {
             return false;
         }
         ProductDefinition rhs = ((ProductDefinition) other);

@@ -19,7 +19,7 @@ public class Rate {
     @JsonProperty("rateTiers")
     private List<RateTier> rateTiers = null;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      * No args constructor for use in serialization
@@ -105,7 +105,7 @@ public class Rate {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Rate) == false) {
+        if (!(other instanceof Rate)) {
             return false;
         }
         Rate rhs = ((Rate) other);
