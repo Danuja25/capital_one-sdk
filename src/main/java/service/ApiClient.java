@@ -1,3 +1,5 @@
+package service;
+
 import auth.AccessTokenAuthenticator;
 import auth.AppCredentials;
 import auth.AuthClient;
@@ -25,12 +27,9 @@ public class ApiClient
                 .build();
     }
 
-    Response sendRequest(Request request)
+    public Response sendRequest(Request request)
     {
-        String authToken = authClient.authorize();
-        Request validRequest = request.newBuilder()
-                .header(AuthConstants.AUTH_HEADER, authToken)
-                .build();
+        Request validRequest = authClient.authorize(request);
         try
         {
             return okHttpClient.newCall(validRequest).execute();

@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "productDefinition": {
+        "productName": "360 Savings",
+        "productGroup": "DDA",
+        "productTypeDescription": "Savings",
+        "productCode": "1234"
+      },
+      "rates": [
+        {
+          "rateType": "Standard Rate",
+          "rateTiers": [
+            {
+              "annualizedPercentageYield": 0.9,
+              "term": 36,
+              "minimumBalance": 0,
+              "maximumBalance": 4999
+            }
+          ]
+        }
+      ],
+      "features": [
+        {
+          "featureDetails": {
+            "allowOnlineAccountOpen": true,
+            "allowDeposits": true,
+            "allowWithdrawals": true,
+            "allowSavingsGoal": true,
+            "allowBillPay": true,
+            "allowMailCheck": true,
+            "allowCashierCheck": false,
+            "allowCheckbook": false,
+            "allowFreeCheckbook": false,
+            "allowPersonToPerson": true,
+            "allowRemoteDepositCheck": true,
+            "allowWires": true,
+            "allowCardByDefault": true,
+            "allowCardOnRequest": false,
+            "allowNewCardOrder": true,
+            "isCardNetworkAllPoint": false,
+            "isCardInNetwork": true,
+            "allowFreeSavingTransfer": true,
+            "allowOverdraftLineOfCredit": false,
+            "allowCourtesyOverdraft": false,
+            "allowNextDayGrace": true,
+            "allowOverrideOverdraftLimit": true
+          }
+        }
+      ]
+    }
+  ]
+}

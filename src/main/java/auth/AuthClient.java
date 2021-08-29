@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-import static auth.AuthConstants.JSON;
+import static utils.CommonConstants.JSON;
 
 public class AuthClient
 {
@@ -31,14 +31,22 @@ public class AuthClient
                 .build();
     }
 
-    public String authorize()
+    public Request authorize(Request request)
     {
-        if(Objects.nonNull(token) && !token.isEmpty())
+        if(Objects.isNull(token) || token.isEmpty())
         {
-            return token;
+            token = generateToken();
         }
-        token = generateToken();
-        return token;
+        return request.newBuilder()
+                .header(AuthConstants.AUTH_HEADER, token)
+                .build();
+
+    }
+
+    public Request refreshToken(Request request)
+    {
+        token = null;
+        return authorize(request);
     }
 
     String generateToken()
