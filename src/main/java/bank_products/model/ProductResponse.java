@@ -1,4 +1,4 @@
-package model;
+package bank_products.model;
 
 import com.fasterxml.jackson.annotation.*;
 
